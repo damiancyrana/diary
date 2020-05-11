@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>Add new Subject:</p>
+    <form action="{% url 'diary:new_subject' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button name="submit">Add new Subject</button>
+    </form>
+{% endblock %}

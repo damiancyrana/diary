@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p><a href="{% url 'diary:subject' subject.id %}">{{ subject }}</a></p>
+    <p>edit entry:</p>
+    <form action="{% url 'diary:edit_entry' entry.id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button name="submit">Save changes</button>
+    </form>
+{% endblock %}
