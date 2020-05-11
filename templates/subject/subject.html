@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>Subject: {{ subject }}</p>
+    <p>entries:</p>
+    <ul>
+        {% for entry in entries %}
+            <p>{{ entry.addition_time|date:'d M Y H:i' }}</p>
+            <p>{{ entry.text|linebreaks }}</p>
+        {% empty %}
+            <li>No found entry</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
