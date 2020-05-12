@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p><a href="{% url 'diary:subject' subject.id %}">{{ subject }}</a></p>
+    <p><a href="{% url 'diary:subject' entry.id %}">{{ subject }}</a></p>
     <p>Add new entry:</p>
-    <form action="{% url 'diary:new_entry' subject.id %}" method="post">
+    <form action="{% url 'diary:new_entry' entry.id %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
     <button name="submit">Add entry</button>

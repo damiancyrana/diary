@@ -8,9 +8,7 @@ db.sqlite3
 media
 
 # Settings #
-/personal_diary/settings.py
-/personal_diary/asgi.py
-/personal_diary/wsgi.py
+
 
 # Backup files #
 *.bak

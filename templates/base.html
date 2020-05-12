@@ -3,21 +3,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>{% block title %}Personal Diary{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<p>
-    <a href="{% url 'diary:index' %}">Personal Diary</a>
-    <a href="{% url 'diary:subjects' %}">Subjects</a>
 
-    {% if user.is_authenticated %}
-        <a href="{% url 'accounts:logout' %}">Logout</a>
-    {% else %}
-        <a href="{% url 'accounts:register' %}">Register</a>
-        <a href="{% url 'accounts:login' %}">Login</a>
-    {% endif %}
-</p>
+<header>
+    <div class="logo-container">
+        <a class="logo" href="{% url 'diary:index' %}">Personal DIARY</a>
+    </div>
+
+    <nav>
+        <ul class="nav-links">
+            {% if user.is_authenticated %}
+                <li class="nav-link"><a href="{% url 'diary:subjects' %}">Subjects</a></li>
+                <li class="nav-link"><a href="{% url 'accounts:logout' %}">Logout</a></li>
+            {% else %}
+                <li class="nav-link"><a href="{% url 'accounts:register' %}">Register</a></li>
+                <li class="nav-link"><a href="{% url 'accounts:login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+
+
 
 
 {% block content %}{% endblock %}

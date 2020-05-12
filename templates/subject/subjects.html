@@ -1,13 +1,34 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p>Subjects:</p>
-    <ul>
-        {% for subject in subjects %}
-            <li><a href="{% url 'diary:subject' subject.id %}">{{ subject }}</a></li>
-        {% empty %}
-            <li>subject no found !</li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'diary:new_subject' %}">Add new subject</a>
+    <main class="subjects">
+    <nav class="nav-subject">
+        <ul class="nav-subject-links">
+            <li>Subjects:</li>
+            <li><a href="{% url 'diary:new_subject' %}">Add new subject</a></li>
+        </ul>
+    </nav>
+
+    <section>
+
+
+        <div class="subjects-content">
+
+            <ul class="subjects-content-links">
+                {% for subject in subjects %}
+                    <li class="subjects-content-link">
+                        <a href="{% url 'diary:subject' subject.id %}">{{ subject }}</a>
+                    </li>
+                {% empty %}
+                    <li class="subjects-content-link">subject no found !</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+
 {% endblock %}

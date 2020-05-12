@@ -1,16 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p>Subject: {{ subject }}</p>
-    <p>entries:</p>
-    <p><a href="{% url 'diary:new_entry' subject.id %}">Add new entry</a></p>
-    <ul>
-        {% for entry in entries %}
-            <p>{{ entry.addition_time|date:'d M Y H:i' }}</p>
-            <p>{{ entry.text|linebreaks }}</p>
-            <p><a href="{% url 'diary:edit_entry' entry.id %}">Edit entry</a></p>
-        {% empty %}
-            <li>No found entry</li>
-        {% endfor %}
-    </ul>
+    <section class="subject-container">
+        <nav class="nav-subject">
+            <ul class="nav-subject-links">
+                <li>Subject: <strong>{{ subject }}</strong></li>
+                <li>
+                    {% for entry in entries %}
+                        <p>{{ entry.addition_time|date:'d M Y H:i' }}</p>
+                    {% endfor %}
+                </li>
+                <li><a href="{% url 'diary:new_entry' subject.id %}">Add new entry</a></li>
+            </ul>
+
+        </nav>
+
+        <ul class="entry">
+            {% for entry in entries %}
+                <p>{{ entry.text|linebreaks }}</p>
+                <div class="edit-entry"><a href="{% url 'diary:edit_entry' entry.id %}">Edit entry</a></div>
+            {% empty %}
+                <li class="empty">Not found entry</li>
+            {% endfor %}
+        </ul>
+    </section>
 {% endblock %}
+

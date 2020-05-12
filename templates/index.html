@@ -1,7 +1,33 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>Personal Diary</h1>
-    <p>The safest place in your personal entries</p>
+    <main>
+        <section class="presentation">
+            <div class="introduction">
+                <div class="intro-text">
+                    <h1>Hello {{ user.username }}</h1>
+                    <p>
+                        In the most safety place in website for yours personal notes
+                    </p>
+                </div>
+                <div class="cta">
+                    {% if user.is_authenticated %}
+                        <button class="cta-select"><a href="{% url 'accounts:logout' %}">Logout</a></button>
+                        <button class="cta-add"><a href="{% url 'diary:subjects' %}">Subjects</a></button>
+                    {% else %}
+                        <button class="cta-select"><a href="{% url 'accounts:register' %}">Register</a></button>
+                        <button class="cta-add"><a href="{% url 'accounts:login' %}">Login</a></button>
+                    {% endif %}
 
+                </div>
+            </div>
+            <div class="cover">
+                <img src="{% static 'img/hero.png' %}" alt="hero"/>
+            </div>
+        </section>
+
+        <img class="eclipse" src="{% static 'img/eclipse.svg' %}" alt=""/>
+
+    </main>
 {% endblock %}

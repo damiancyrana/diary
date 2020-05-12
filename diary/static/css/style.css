@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+:root {
+    --title-font: 'Montserrat', sans-serif;
+    --main-color: #00E9D3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    display: flex;
+    width: 90%;
+    height: 10vh;
+    margin: auto;
+    align-items: center;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.logo-container,
+.nav-links {
+    display: flex;
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo {
+    margin: 5px;
+}
+
+nav {
+    flex: 2;
+}
+
+.nav-links {
+    list-style: none;
+    justify-content: flex-end;
+}
+
+.nav-link {
+    color: var(--main-color);
+    text-decoration: none;
+    padding: 20px;
+}
+
+
+.presentation {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    min-height: 70vh;
+    align-items: center;
+}
+
+.introduction {
+    flex: 1;
+}
+
+.intro-text h1 {
+    font-size: 44px;
+    font-weight: 500;
+    background: linear-gradient(to right, #494964, #6f6f89);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-text p {
+    font-family: var(--title-font);
+    margin-top: 5px;
+    font-size: 18px;
+    color: #585772;
+}
+
+.cta {
+    margin: 50px 0 0 0;
+}
+
+.cta-select {
+    border: 2px solid var(--main-color);
+    background: transparent;
+    color: #c36cbb;
+    width: 140px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cta-add {
+    background: var(--main-color);
+    width: 140px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    color: white;
+    margin-left: 15px;
+}
+
+.cover {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+}
+
+.cover img {
+    height: 120%;
+    filter: drop-shadow(0px 5px 3px black);
+}
+
+.eclipse {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0.5;
+    height: 100%;
+}
+
+/* SUBJECTS */
+.subjects {
+    margin: 20px auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 20px 25px 0 rgba(0, 0, 0, 0.19);
+    padding: 0 50px 0 50px;
+    width: 75%;
+    min-height: 30vh;
+    text-align: justify;
+}
+
+.subjects-content {
+    font-family: var(--title-font);
+    font-size: 18px;
+    display: inline;
+    padding: 50px;
+}
+
+.subjects-content-links {
+    padding-left: 20px;
+}
+
+.subjects-content-link {
+    padding: 10px;
+
+}
+
+/* LOGIN */
+.login {
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.form-link {
+    padding: 20px;
+}
+
+.form-btn {
+    margin-top: 30px;
+}
+
+/* Subject */
+.subject-container {
+    margin: 20px auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 20px 25px 0 rgba(0, 0, 0, 0.19);
+    padding: 0 50px 0 50px;
+    width: 75%;
+    min-height: 30vh;
+    text-align: justify;
+}
+
+.nav-subject {
+    font-family: var(--title-font);
+    background-color: var(--main-color);
+    padding: 15px;
+}
+
+.nav-subject-links {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.entry {
+    padding-top: 30px;
+    font-size: 15px;
+
+}
+
+.edit-entry {
+    background: var(--main-color);
+    width: 140px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    color: white;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.empty {
+    font-family: var(--title-font);
+    list-style: none;
+    color: red;
+    text-align: center;
+    font-size: 30px;
+}
+
+
+@media only screen and (max-width: 800px) {
+    header {
+        font-size: 17px;
+    }
+
+    .nav-links {
+        justify-content: space-around;
+    }
+
+    .presentation {
+        flex-direction: column;
+    }
+
+    .introduction {
+        margin-top: 4vh;
+        text-align: center;
+    }
+
+    .intro-text h1 {
+        font-size: 32px;
+    }
+
+    .intro-text p {
+        font-size: 18px;
+    }
+
+    .cta {
+        padding-top: 10px;
+    }
+
+    .cover img {
+        margin-top: 10px;
+        height: 100%;
+        width: 100%;
+    }
+
+    .eclipse {
+        opacity: 0.2;
+    }
+}
